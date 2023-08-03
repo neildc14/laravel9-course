@@ -28,4 +28,4 @@ Route::get('/contact', function(){
 });
 
 
-Route::get('/users/{name}',[Users::class, 'index']);
+Route::get('/users',[Users::class, 'index']);

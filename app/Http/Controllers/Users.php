@@ -8,8 +8,10 @@ class Users extends Controller
 {
     //
 
-    public function index($name){
-        echo $name;
-        echo 'Hello Worlds from controller';
+    function index(){
+        // echo $name;
+        // echo 'Hello Worlds from controller';
+
+        return view('users');
     }
 }
