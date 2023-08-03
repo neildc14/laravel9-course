@@ -22,4 +22,9 @@ class Users extends Controller
      
         return view('users', ["users"=> $data, "persons"=>$person]);
     }
+
+
+    function getData(Request $req){
+        return $req->input();
+    }
 }

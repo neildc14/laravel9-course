@@ -31,5 +31,8 @@ Route::get('/contact', function(){
 
 Route::get('/users',[Users::class, 'index']);
 
+//form
+Route::post('/users-data',[Users::class,'getData']);
+Route::view("login", 'user-login');
 
 Route::get('/products',[Product::class, 'productList']);
