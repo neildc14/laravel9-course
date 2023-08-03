@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,6 @@ Route::get('/contact', function(){
 
 
 Route::get('/users',[Users::class, 'index']);
+
+
+Route::get('/products',[Product::class, 'productList']);
