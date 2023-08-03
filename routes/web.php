@@ -14,7 +14,7 @@ use App\Http\Controllers\Users;
 */
 
 Route::get('/', function () {
-    return redirect('about');
+    return view('welcome');
 });
 
 
