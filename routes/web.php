@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Users;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,6 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view('contact');
 });
+
+
+Route::get('/users/{name}',[Users::class, 'index']);
