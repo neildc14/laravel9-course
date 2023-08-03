@@ -11,7 +11,15 @@ class Users extends Controller
     function index(){
         // echo $name;
         // echo 'Hello Worlds from controller';
+        
+        $data = ["neil", "camille", "edward", "joy"];
 
-        return view('users');
+        $person = [
+            'name' => 'John Doe',
+            'age' => 30,
+            'email' => 'john.doe@example.com',
+           ];
+     
+        return view('users', ["users"=> $data, "persons"=>$person]);
     }
 }

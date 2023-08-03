@@ -10,7 +10,33 @@
    <x-header data="The header is access through th users page"/>
    <main class="h-full bg-emerald-300 ">
     <h1>USER PAGE</h1>
-    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ipsam. Nobis nesciunt illo ipsum quaerat reiciendis, dignissimos quibusdam veniam vero doloribus vel maiores iusto suscipit tempora, dolorem quo consequuntur saepe, natus facere nisi corporis veritatis nam aspernatur. Voluptatibus quae, veritatis numquam placeat similique ipsa. Veniam unde expedita qui, ad facere ea, labore quidem beatae quos harum explicabo. Accusamus magni et quo doloribus amet dolore dolor ea obcaecati! Incidunt, reiciendis impedit. Voluptate omnis necessitatibus architecto maiores cumque deserunt tenetur, voluptatem ex odio consectetur, rerum iste illum? Eligendi, in numquam fugiat recusandae qui dolor debitis ullam ducimus laboriosam nobis enim veritatis illo!</p>
+
+    {{-- @if($user == "Neila")
+     <h3>Hello {{$user}}</h3>
+    @else
+     <h3>Hello Visitor</h3>
+    @endif
+
+
+    @for($i = 0; $i <= 10; $i++)
+     <h2>NUMBER IS {{$i}}</h2>
+    @endfor --}}
+
+
+
+    
+    @foreach ($users as $user)
+     <h2>{{$user}}</h2>   
+    @endforeach
+
+
+    @foreach($persons as $key => $value)
+    Key: {{ $key }}, Value: {{ $value }}
+    @endforeach
+
+   
+    
+
    </main>
    
    <x-footer/>
