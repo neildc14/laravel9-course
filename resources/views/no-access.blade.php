@@ -1,0 +1,1 @@
+<h1>Access Denied! You are under age for this content.</h1>

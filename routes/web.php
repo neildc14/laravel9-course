@@ -14,6 +14,8 @@ use App\Http\Controllers\Product;
 |
 */
 
+Route::view('/no-access','no-access');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,4 +37,10 @@ Route::get('/users',[Users::class, 'index']);
 Route::post('/users-data',[Users::class,'getData']);
 Route::view("login", 'user-login');
 
-Route::get('/products',[Product::class, 'productList']);
+
+
+Route::group(['middleware'=>'protectedPage'], function(){
+    Route::view('/home', 'home');
+    Route::get('/products',[Product::class, 'productList']);
+}
+);
