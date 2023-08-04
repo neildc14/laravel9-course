@@ -46,3 +46,4 @@ Route::group(['middleware'=>'protectedPage'], function(){
 );
 
 Route::get('db-users', [Users::class, 'getDataFromDB']);
+Route::get('users-api', [Users::class, 'getDataFromAPI']);

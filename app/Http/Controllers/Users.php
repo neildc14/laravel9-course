@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class Users extends Controller
 {
@@ -36,5 +37,12 @@ class Users extends Controller
 
     function getDataFromDB(){
         return User::all();
+    }
+
+    function getDataFromAPI(){
+
+            $collections = Http::get('https://reqres.in/api/users/1');
+            
+            return view('users', ["collections"=>$collections]);
     }
 }

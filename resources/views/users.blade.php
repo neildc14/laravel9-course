@@ -25,16 +25,41 @@
 
 
     
-    @foreach ($users as $user)
+    {{-- @foreach ($users as $user)
      <h2>{{$user}}</h2>   
     @endforeach
 
 
     @foreach($persons as $key => $value)
     Key: {{ $key }}, Value: {{ $value }}
-    @endforeach
+    @endforeach --}}
 
    
+    <table border="1">
+      <thead>
+         <tr>
+            <td>ID</td>
+         </tr>
+         <tr>
+            <td>Name</td>
+         </tr>
+         <tr>
+            <td>Email</td>
+         </tr>
+         <tr>
+            <td>Profile Photo</td>
+         </tr>
+      </thead>
+      <tbody>
+      
+      {{$collections}}
+      @foreach ($collections as $collection)
+         {{ collection }}    
+      @endforeach
+        
+       
+      </tbody>
+    </table>
     
 
    </main>
