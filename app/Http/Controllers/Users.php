@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\Models\User;
 
 class Users extends Controller
 {
@@ -31,5 +32,9 @@ class Users extends Controller
             'password'=>'required |min:10'
         ]);
         return $req->input();
+    }
+
+    function getDataFromDB(){
+        return User::all();
     }
 }

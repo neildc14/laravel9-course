@@ -44,3 +44,5 @@ Route::group(['middleware'=>'protectedPage'], function(){
     Route::get('/products',[Product::class, 'productList']);
 }
 );
+
+Route::get('db-users', [Users::class, 'getDataFromDB']);
