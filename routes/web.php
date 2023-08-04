@@ -35,7 +35,7 @@ Route::get('/users',[Users::class, 'index']);
 
 //form
 Route::post('/users-data',[Users::class,'getData']);
-Route::view("login", 'user-login');
+// Route::view("login", 'user-login');
 
 
 
@@ -46,4 +46,27 @@ Route::group(['middleware'=>'protectedPage'], function(){
 );
 
 Route::get('db-users', [Users::class, 'getDataFromDB']);
-Route::get('users-api', [Users::class, 'getDataFromAPI']);
+// Route::get('users-api', [Users::class, 'getDataFromAPI']);
+
+Route::post('user-login', [Users::class, 'loginUser']);
+
+Route::view('profile', 'profile');
+
+
+Route::get('/login', function(){
+    if(session()->has('username')){
+        return redirect('profile');
+    }else{
+
+        return view('login');
+    }
+
+});
+
+Route::get('/logout', function(){
+    if(session()->has('username')){
+        session()->pull('username');
+    }
+
+    return redirect('login');
+});

@@ -39,10 +39,18 @@ class Users extends Controller
         return User::all();
     }
 
-    function getDataFromAPI(){
+    // function getDataFromAPI(){
 
-            $collections = Http::get('https://reqres.in/api/users/1');
+    //         $collections = Http::get('https://reqres.in/api/users/1');
             
-            return view('users', ["collections"=>$collections]);
+    //         return view('users', ["collections"=>$collections]);
+    // }
+
+    function loginUser(Request $req){
+        
+        $data = $req->input();
+        $req->session()->put('username', $data['username']);
+
+        return redirect('profile');
     }
 }
