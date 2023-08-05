@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('about');
-});
+// Route::get('/', function () {
+//     return redirect('about');
+// });
 
 
-Route::get('/about', function(){
-    return view('about');
-});
-
-
-Route::get('/contact', function(){
-    return view('contact');
-});
+Route::get('/users',[MemberController::class,'show']);
+Route::resource('products',ProductController::class);
